@@ -66,6 +66,7 @@
     <string name="pref_camera_whitebalance_entry_daylight" msgid="2534757270149561027">"日光"</string>
     <string name="pref_camera_whitebalance_entry_fluorescent" msgid="2435332872847454032">"螢光燈"</string>
     <string name="pref_camera_whitebalance_entry_cloudy" msgid="3531996716997959326">"陰天"</string>
+    <string name="pref_camera_whitebalance_entry_cloudydaylight">"陰天-日光"</string>
     <string name="pref_camera_scenemode_title" msgid="1420535844292504016">"場景模式"</string>
     <string name="pref_camera_scenemode_entry_auto" msgid="7113995286836658648">"自動"</string>
     <string name="pref_camera_scenemode_entry_action" msgid="616748587566110484">"動態"</string>
@@ -123,4 +124,17 @@
     <string name="accessibility_decrement" msgid="1411194318538035666">"縮小 %1$s"</string>
     <string name="accessibility_increment" msgid="8447850530444401135">"放大 %1$s"</string>
     <string name="accessibility_switch" msgid="6995966685498958895">"%1$s 開關"</string>
+
+    <!-- More Settings screen, power button title -->
+    <string name="pref_camera_power_shutter_title">電源鍵快門</string>
+    <string name="pref_camera_power_shutter_default">開閉</string>
+
+    <!-- More Settings screen, volume zoom setting title text -->
+    <string name="pref_camera_volumezoom_title">音量鍵變焦</string>
+    <!-- More Settings screen, Volume zoom dialog choices -->
+    <string name="pref_camera_volumezoom_entry_off">關閉</string>
+    <string name="pref_camera_volumezoom_entry_on">啟用</string>
+
+
+ 
 </resources>

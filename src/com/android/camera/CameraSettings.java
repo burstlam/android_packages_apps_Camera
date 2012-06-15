@@ -56,6 +56,7 @@ public class CameraSettings {
     
     public static final String KEY_POWER_SHUTTER = "pref_power_shutter";
     public static final String KEY_VOLUME_ZOOM = VolumeZoomPreference.KEY;
+    public static final String KEY_FOCUS_SOUND = "pref_focus_sound";
 
     public static final String EXPOSURE_DEFAULT_VALUE = "0";
 

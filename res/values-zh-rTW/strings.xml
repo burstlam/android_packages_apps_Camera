@@ -123,4 +123,37 @@
     <string name="accessibility_decrement" msgid="1411194318538035666">"縮小 %1$s"</string>
     <string name="accessibility_increment" msgid="8447850530444401135">"放大 %1$s"</string>
     <string name="accessibility_switch" msgid="6995966685498958895">"%1$s 開關"</string>
+
+    <!-- Temp for Translation -->
+
+    <!-- More Settings screen, power button title -->
+    <string name="pref_camera_power_shutter_title">電源鍵快門</string>
+    <string name="pref_camera_power_shutter_default">關閉</string>
+
+    <!-- More Settings screen, focus sound title -->
+    <string name="pref_camera_focus_sound_title">對焦音效</string>
+    <string name="pref_camera_focus_sound_default">啟用</string>
+
+    <!-- Other settings -->
+    <string name="pref_camera_focus_title">輕觸對焦</string>
+    <string name="pref_camera_focus_summary">對焦操作時間</string>
+    <!-- Settings screen, Timer mode entries -->
+    <string name="pref_camera_focus_entry_10">10秒</string>
+    <string name="pref_camera_focus_entry_15">15秒</string>
+    <string name="pref_camera_focus_entry_20">20秒</string>
+    <string name="pref_camera_focus_entry_30">30秒</string>
+    <string name="pref_camera_focus_entry_40">40秒</string>
+    <string name="pref_camera_focus_entry_infinit">無限時</string>
+
+    <!-- Settings screen, Timer mode title -->
+    <string name="pref_camera_timer_title">自拍模式</string>
+
+    <!-- Settings screen, Timer mode entries -->
+    <string name="pref_camera_timer_entry_0">關閉</string>
+    <string name="pref_camera_timer_entry_10">10秒</string>
+    <string name="pref_camera_timer_entry_20">20秒</string>
+    <string name="pref_camera_timer_entry_30">30秒</string>
+    <string name="pref_camera_timer_entry_40">40秒</string>
+    <string name="pref_camera_timer_entry_50">50秒</string>
+    <string name="pref_camera_timer_entry_60">1分鐘</string>
 </resources>

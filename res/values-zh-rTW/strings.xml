@@ -53,6 +53,13 @@
     <string name="pref_camera_volumezoom_entry_on">開啟</string>
     <string name="pref_video_quality_title" msgid="8245379279801096922">"影片品質"</string>
     <string name="pref_video_time_lapse_frame_interval_title" msgid="5262531404348504642">"延時攝影間隔"</string>
+    <string name="pref_video_time_lapse_frame_interval_entry_1000" translatable="false">1 秒</string>
+    <string name="pref_video_time_lapse_frame_interval_entry_1500" translatable="false">1.5 秒</string>
+    <string name="pref_video_time_lapse_frame_interval_entry_2000" translatable="false">2 秒</string>
+    <string name="pref_video_time_lapse_frame_interval_entry_2500" translatable="false">2.5 秒</string>
+    <string name="pref_video_time_lapse_frame_interval_entry_3000" translatable="false">3 秒</string>
+    <string name="pref_video_time_lapse_frame_interval_entry_5000" translatable="false">5 秒</string>
+    <string name="pref_video_time_lapse_frame_interval_entry_10000" translatable="false">10 秒</string>
     <string name="pref_camera_settings_category" msgid="2576236450859613120">"相機設定"</string>
     <string name="pref_camcorder_settings_category" msgid="460313486231965141">"攝錄影機設定"</string>
     <string name="pref_camera_picturesize_title" msgid="4333724936665883006">"相片大小"</string>
@@ -60,6 +67,8 @@
     <string name="pref_camera_focusmode_entry_auto" msgid="7374820710300362457">"自動"</string>
     <string name="pref_camera_focusmode_entry_infinity" msgid="3413922419264967552">"無限遠"</string>
     <string name="pref_camera_focusmode_entry_macro" msgid="4424489110551866161">"微距"</string>
+    <string name="pref_camera_focusmode_entry_fixed">定焦</string>
+    <string name="pref_camera_focusmode_entry_facedetect">面部偵測</string>
     <string name="pref_camera_flashmode_title" msgid="2287362477238791017">"閃光模式"</string>
     <string name="pref_camera_flashmode_entry_auto" msgid="7288383434237457709">"自動"</string>
     <string name="pref_camera_flashmode_entry_on" msgid="5330043918845197616">"開啟"</string>
@@ -110,6 +119,10 @@
     <string name="effect_backdropper_space" msgid="7935661090723068402">"太空"</string>
     <string name="effect_backdropper_sunset" msgid="45198943771777870">"黃昏"</string>
     <string name="effect_backdropper_disco" msgid="8494822051982972854">"迪斯可"</string>
+    <string name="pref_camera_scenemode_entry_backlight">逆光</string>
+    <string name="pref_camera_scenemode_entry_duskdawn">微光</string>
+    <string name="pref_camera_scenemode_entry_fallcolor">濾色</string>
+    <string name="pref_camera_scenemode_entry_text">文字</string>
     <string name="effect_backdropper_gallery" msgid="3271387403091819540">"選擇您自己的影片"</string>
     <string name="bg_replacement_message" msgid="6828585054971662284">"放下您的裝置"\n"暫時離開畫面"</string>
     <string name="not_selectable_in_effect" msgid="7967729203855039239">"效果啟用時無法選取。"</string>
@@ -131,6 +144,14 @@
 
     <!-- Settings screen, Timer mode title -->
     <string name="pref_camera_timer_title">自拍模式</string>
+    <string name="pref_camera_timer_entry_0">關閉</string>
+    <string name="pref_camera_timer_entry_10">10 秒</string>
+    <string name="pref_camera_timer_entry_20">20 秒</string>
+    <string name="pref_camera_timer_entry_30">30 秒</string>
+    <string name="pref_camera_timer_entry_40">40 秒</string>
+    <string name="pref_camera_timer_entry_50">50 秒</string>
+    <string name="pref_camera_timer_entry_60">60 秒</string>
+
 
     <!-- More Settings screen, focus sound title -->
     <string name="pref_camera_focus_sound_title">對焦音效</string>

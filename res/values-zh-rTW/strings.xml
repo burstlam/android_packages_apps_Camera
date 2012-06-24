@@ -133,7 +133,7 @@
     <string name="pref_camera_timer_title">自拍模式</string>
 
     <!-- More Settings screen, focus sound title -->
-    <string name="pref_camera_focus_sound_title">對焦音開關</string>
-    <string name="pref_camera_focus_sound_default">開</string>
+    <string name="pref_camera_focus_sound_title">對焦音效</string>
+    <string name="pref_camera_focus_sound_default">啟用</string>
 
 </resources>

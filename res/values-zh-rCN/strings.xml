@@ -56,6 +56,8 @@
     <string name="pref_camera_focusmode_entry_auto" msgid="7374820710300362457">"自动"</string>
     <string name="pref_camera_focusmode_entry_infinity" msgid="3413922419264967552">"无限远"</string>
     <string name="pref_camera_focusmode_entry_macro" msgid="4424489110551866161">"微距"</string>
+    <string name="pref_camera_focusmode_entry_fixed">定焦</string>
+    <string name="pref_camera_focusmode_entry_facedetect">面部检测</string>
     <string name="pref_camera_flashmode_title" msgid="2287362477238791017">"闪光模式"</string>
     <string name="pref_camera_flashmode_entry_auto" msgid="7288383434237457709">"自动"</string>
     <string name="pref_camera_flashmode_entry_on" msgid="5330043918845197616">"开"</string>
@@ -73,6 +75,10 @@
     <string name="pref_camera_scenemode_entry_night" msgid="7606898503102476329">"夜景"</string>
     <string name="pref_camera_scenemode_entry_sunset" msgid="181661154611507212">"日落"</string>
     <string name="pref_camera_scenemode_entry_party" msgid="907053529286788253">"派对"</string>
+    <string name="pref_camera_scenemode_entry_backlight">逆光</string>
+    <string name="pref_camera_scenemode_entry_duskdawn">微光</string>
+    <string name="pref_camera_scenemode_entry_fallcolor">滤色</string>
+    <string name="pref_camera_scenemode_entry_text">文字</string>
     <string name="not_selectable_in_scene_mode" msgid="2970291701448555126">"无法在取景模式下选择。"</string>
     <string name="pref_restore_title" msgid="6479274979730178961">"相机设置"</string>
     <string name="pref_restore_detail" msgid="5732490002291044791">"还原默认设置"</string>
@@ -136,6 +142,13 @@
 
     <!-- Settings screen, Timer mode title -->
     <string name="pref_camera_timer_title">自拍模式</string>
+    <string name="pref_camera_timer_entry_0">关闭</string>
+    <string name="pref_camera_timer_entry_10">10 秒</string>
+    <string name="pref_camera_timer_entry_20">20 秒</string>
+    <string name="pref_camera_timer_entry_30">30 秒</string>
+    <string name="pref_camera_timer_entry_40">40 秒</string>
+    <string name="pref_camera_timer_entry_50">50 秒</string>
+    <string name="pref_camera_timer_entry_60">60 秒</string>
 
     <!-- More Settings screen, focus sound title -->
     <string name="pref_camera_focus_sound_title">对焦音效</string>

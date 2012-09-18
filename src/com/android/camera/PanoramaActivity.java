@@ -1246,8 +1246,7 @@ public class PanoramaActivity extends ActivityBase implements
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         switch (keyCode) {
             case KeyEvent.KEYCODE_VOLUME_UP:
-                if (event.getRepeatCount() == 0
-                        && mParameters.isZoomSupported()
+                if (mParameters.isZoomSupported()
                         && !(mPaused || mThreadRunning || mCameraTexture == null || mCaptureState == CAPTURE_STATE_MOSAIC)) {
                     int index = mParameters.getZoom() + 1;
                     if (index <= mParameters.getMaxZoom()) {
@@ -1257,8 +1256,7 @@ public class PanoramaActivity extends ActivityBase implements
                 }
                 return true;
             case KeyEvent.KEYCODE_VOLUME_DOWN:
-                if (event.getRepeatCount() == 0
-                        && mParameters.isZoomSupported()
+                if (mParameters.isZoomSupported()
                         && !(mPaused || mThreadRunning || mCameraTexture == null || mCaptureState == CAPTURE_STATE_MOSAIC)) {
                     int index = mParameters.getZoom() - 1;
                     if (index >= 0) {
@@ -1276,15 +1274,13 @@ public class PanoramaActivity extends ActivityBase implements
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         switch (keyCode) {
             case KeyEvent.KEYCODE_VOLUME_UP:
-                if (event.getRepeatCount() == 0
-                        && mParameters.isZoomSupported()
+                if (mParameters.isZoomSupported()
                         && !(mPaused || mThreadRunning || mCameraTexture == null)) {
                     return true;
                 }
                 break;
             case KeyEvent.KEYCODE_VOLUME_DOWN:
-                if (event.getRepeatCount() == 0
-                        && mParameters.isZoomSupported()
+                if (mParameters.isZoomSupported()
                         && !(mPaused || mThreadRunning || mCameraTexture == null)) {
                     return true;
                 }

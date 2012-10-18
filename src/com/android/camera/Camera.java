@@ -1989,6 +1989,9 @@ public class Camera extends ActivityBase implements FocusManager.Listener,
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (!mShowCameraAppView) {
+            return super.onKeyDown(keyCode, event);
+        }
         switch (keyCode) {
             case KeyEvent.KEYCODE_FOCUS:
                 if (mFirstTimeInitialized && event.getRepeatCount() == 0) {
@@ -2050,6 +2053,9 @@ public class Camera extends ActivityBase implements FocusManager.Listener,
 
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
+        if (!mShowCameraAppView) {
+            return super.onKeyUp(keyCode, event);
+        }
         switch (keyCode) {
             case KeyEvent.KEYCODE_FOCUS:
                 if (mFirstTimeInitialized) {
@@ -2107,7 +2113,11 @@ public class Camera extends ActivityBase implements FocusManager.Listener,
 
         // If we're previewing already, stop the preview first (this will blank
         // the screen).
-        if (mCameraState != PREVIEW_STOPPED) stopPreview();
+        if (mCameraState != PREVIEW_STOPPED &&
+             (!getResources().getBoolean(R.bool.previewStopsDuringSnapshot) || 
+               mCameraState != SNAPSHOT_IN_PROGRESS) 
+           ) 
+            stopPreview();
 
         setDisplayOrientation();
         mCameraDevice.setDisplayOrientation(mCameraDisplayOrientation);

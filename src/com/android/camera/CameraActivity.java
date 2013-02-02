@@ -43,6 +43,7 @@ public class CameraActivity extends ActivityBase
     public static final int VIDEO_MODULE_INDEX = 1;
     public static final int PANORAMA_MODULE_INDEX = 2;
     public static final int LIGHTCYCLE_MODULE_INDEX = 3;
+    public static final int GALLERY_MODULE_INDEX = 4;
 
     CameraModule mCurrentModule;
     private FrameLayout mFrame;
@@ -64,7 +65,8 @@ public class CameraActivity extends ActivityBase
             R.drawable.ic_switch_camera,
             R.drawable.ic_switch_video,
             R.drawable.ic_switch_pan,
-            R.drawable.ic_switch_photosphere
+            R.drawable.ic_switch_photosphere,
+            R.drawable.ic_switch_gallery
     };
 
     @Override
@@ -173,6 +175,8 @@ public class CameraActivity extends ActivityBase
                 break;
             case LIGHTCYCLE_MODULE_INDEX:
                 mCurrentModule = LightCycleHelper.createPanoramaModule();
+                break;
+            case GALLERY_MODULE_INDEX:
                 break;
         }
         openModule(mCurrentModule, canReuse);

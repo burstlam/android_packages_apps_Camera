@@ -2820,6 +2820,9 @@ public class PhotoModule
         if (mFaceView != null) mFaceView.clear();
         if (mFocusManager != null) mFocusManager.removeMessages();
 
+        // Setup Power shutter
+        mActivity.initPowerShutter(mPreferences);
+
         // Restart the camera and initialize the UI. From onCreate.
         mPreferences.setLocalId(mActivity, mCameraId);
         CameraSettings.upgradeLocalPreferences(mPreferences.getLocal());

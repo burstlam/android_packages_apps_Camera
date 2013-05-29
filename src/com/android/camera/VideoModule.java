@@ -1952,6 +1952,7 @@ public class VideoModule implements CameraModule,
         mActivity.initPowerShutter(mPreferences);
         //mActivity.initStoragePrefs(mPreferences);
         mActivity.initSmartCapture(mPreferences);
+        mActivity.initTrueView(mPreferences);
         if (mActivity.mSmartCapture) {
             startSmartCapture();
         } else {
@@ -2104,7 +2105,7 @@ public class VideoModule implements CameraModule,
 
         if (oldWidth != width || oldHeight != height) {
             screenNail.setSize(width, height);
-            screenNail.enableAspectRatioClamping();
+            mActivity.initTrueView(mPreferences);
             mActivity.notifyScreenNailChanged();
         }
 
@@ -2988,6 +2989,7 @@ public class VideoModule implements CameraModule,
         }
         setShowMenu(fullScreen);
         if (mPopup != null) {
+            mActivity.recreateScreenNail();
             ((FrameLayout) mRootView).removeView(mPopup);
             mPopup = null;
         }

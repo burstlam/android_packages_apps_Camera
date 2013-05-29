@@ -965,6 +965,7 @@ public class PhotoModule
         mActivity.initPowerShutter(mPreferences);
         //mActivity.initStoragePrefs(mPreferences);
         mActivity.initSmartCapture(mPreferences);
+        mActivity.initTrueView(mPreferences);
         if (mActivity.mSmartCapture) {
             startSmartCapture();
         } else {
@@ -1578,6 +1579,7 @@ public class PhotoModule
         // Remove the top level popup or dialog box and return true if there's any
         if (mPopup != null) {
             dismissPopup(true);
+            mActivity.recreateScreenNail();
             return true;
         }
         return false;
@@ -2457,7 +2459,7 @@ public class PhotoModule
                 } else {
                     screenNail.setSize(size.height, size.width);
                 }
-                screenNail.enableAspectRatioClamping();
+                mActivity.initTrueView(mPreferences);
                 mActivity.notifyScreenNailChanged();
                 screenNail.acquireSurfaceTexture();
                 mSurfaceTexture = screenNail.getSurfaceTexture();

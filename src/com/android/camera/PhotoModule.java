@@ -34,10 +34,6 @@ import android.hardware.Camera.FaceDetectionListener;
 import android.hardware.Camera.Parameters;
 import android.hardware.Camera.PictureCallback;
 import android.hardware.Camera.Size;
-import android.hardware.Sensor;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorEvent;
-import android.hardware.SensorManager;
 import android.location.Location;
 import android.media.CameraProfile;
 import android.net.Uri;
@@ -98,8 +94,7 @@ public class PhotoModule
     PreviewFrameLayout.OnSizeChangedListener,
     ShutterButton.OnShutterButtonListener,
     SurfaceHolder.Callback,
-    PieRenderer.PieListener,
-    SensorEventListener {
+    PieRenderer.PieListener {
 
     private static final String TAG = "CAM_PhotoModule";
 
@@ -259,8 +254,6 @@ public class PhotoModule
     private static final int SWITCHING_CAMERA = 4;
     private int mCameraState = PREVIEW_STOPPED;
     private boolean mSnapshotOnIdle = false;
-
-    private SensorManager mSensorManager;
 
     private ContentResolver mContentResolver;
 
@@ -495,7 +488,6 @@ public class PhotoModule
         // Surface texture is from camera screen nail and startPreview needs it.
         // This must be done before startPreview.
         mIsImageCaptureIntent = isImageCaptureIntent();
-        updateCustomSettings();
         if (reuseNail) {
             mActivity.reuseCameraScreenNail(!mIsImageCaptureIntent);
         } else {
@@ -959,31 +951,6 @@ public class PhotoModule
         updateFlashOnScreenIndicator(mParameters.getFlashMode());
         updateHdrOnScreenIndicator(mParameters.getSceneMode());
         updateNoHandsIndicator();
-    }
-
-    private void updateCustomSettings() {
-        mActivity.initPowerShutter(mPreferences);
-        //mActivity.initStoragePrefs(mPreferences);
-        mActivity.initSmartCapture(mPreferences);
-        if (mActivity.mSmartCapture) {
-            startSmartCapture();
-        } else {
-            stopSmartCapture();
-        }
-    }
-
-    private void startSmartCapture() {
-        mSensorManager = mActivity.getSensorManager();
-        mSensorManager.registerListener(this,
-                mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY),
-                SensorManager.SENSOR_DELAY_UI);
-    }
-
-    private void stopSmartCapture() {
-        if (mSensorManager != null) {
-            mSensorManager.unregisterListener(this,
-                    mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY));
-        }
     }
 
     private final class ShutterCallback
@@ -1938,8 +1905,8 @@ public class PhotoModule
 
     @Override
     public void updateCameraAppView() {
-        // Setup Power shutter and smart capture
-        updateCustomSettings();
+        // Setup Power shutter
+        mActivity.initPowerShutter(mPreferences);
     }
 
     @Override
@@ -2024,8 +1991,8 @@ public class PhotoModule
         }
         resetScreenOn();
 
-        // Load the Custom Settings
-        updateCustomSettings();
+        // Load the power shutter
+        mActivity.initPowerShutter(mPreferences);
 
         // Clear UI.
         collapseCameraControls();
@@ -2364,25 +2331,6 @@ public class PhotoModule
         return false;
     }
 
-    @Override
-    public void onSensorChanged(SensorEvent event) {
-        if (mActivity.mShowCameraAppView) {
-            int currentProx = (int) event.values[0];
-            if (currentProx == 0) {
-                if (mFirstTimeInitialized) {
-                    onShutterButtonFocus(true);
-                }
-                if (canTakePicture()) {
-                    onShutterButtonClick();
-                }
-            }
-        }
-    }
-
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
-    } 
-
     @TargetApi(ApiHelper.VERSION_CODES.ICE_CREAM_SANDWICH)
     private void closeCamera() {
         if (mCameraDevice != null) {
@@ -2396,7 +2344,6 @@ public class PhotoModule
             mCameraDevice = null;
             setCameraState(PREVIEW_STOPPED);
             mFocusManager.onCameraReleased();
-            stopSmartCapture();
         }
     }
 
@@ -2481,7 +2428,6 @@ public class PhotoModule
         if (mSnapshotOnIdle && (mBurstShotsDone > 0 && !mHDRShotInProgress)) {
             mHandler.post(mDoSnapRunnable);
         }
-        if (mActivity.mSmartCapture) startSmartCapture();
     }
 
     private void stopPreview() {
@@ -2844,7 +2790,7 @@ public class PhotoModule
         setCameraParametersWhenIdle(UPDATE_PARAM_PREFERENCE);
         setPreviewFrameLayoutAspectRatio();
         updateOnScreenIndicators();
-        updateCustomSettings();
+        mActivity.initPowerShutter(mPreferences);
     }
 
     @Override

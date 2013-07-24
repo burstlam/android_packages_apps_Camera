@@ -65,6 +65,7 @@ public class PhotoController extends PieController
                     ListPreference camPref = mPreferenceGroup
                             .findPreference(CameraSettings.KEY_CAMERA_ID);
                     if (camPref != null) {
+                        Util.mSwitchCamera = true;
                         int index = camPref.findIndexOfValue(camPref.getValue());
                         CharSequence[] values = camPref.getEntryValues();
                         index = (index + 1) % values.length;
@@ -109,7 +110,8 @@ public class PhotoController extends PieController
                 CameraSettings.KEY_JPEG,
                 CameraSettings.KEY_COLOR_EFFECT,
                 CameraSettings.KEY_PERSISTENT_NOHANDS,
-                CameraSettings.KEY_BURST_MODE};
+                CameraSettings.KEY_BURST_MODE,
+                CameraSettings.KEY_SHUTTER_SPEED};
         PieItem item = makeItem(R.drawable.ic_settings_holo_light);
         item.setFixedSlice(FLOAT_PI_DIVIDED_BY_TWO * 3, sweep);
         item.setOnClickListener(new OnClickListener() {
